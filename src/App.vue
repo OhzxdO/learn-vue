@@ -15,7 +15,7 @@
     name:'app',
     data () {
       return {
-        userid:'user1'
+        userid:'user2'
       }
     }
   }
