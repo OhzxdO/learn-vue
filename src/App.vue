@@ -2,9 +2,10 @@
   <div id="app">
     <div id="nav">
       <!-- replace无法前进后退 -->
-      <router-link to="/" tag='button' replace>Home</router-link> |
-      <router-link to="/about" replace>About</router-link> |
-      <router-link :to="'/user/'+userid" replace>User</router-link>
+      <router-link to="/" tag='button' >Home</router-link> |
+      <router-link to="/about" >About</router-link> |
+      <router-link :to="'/user/'+userid" >User</router-link> |
+      <router-link :to="{path:'/profile',query:{name:'jack',age:16}}" >Profile</router-link>
     </div>
     <router-view/>
   </div>
