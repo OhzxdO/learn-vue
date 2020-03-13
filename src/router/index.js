@@ -6,9 +6,20 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '',
+    // 重定向
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/user/:id',
+    name: 'user',
+    component: () => import('../views/user.vue')
+
   },
   {
     path: '/about',
@@ -21,7 +32,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode:'history',
+  linkActiveClass:'active'
 })
 
 export default router

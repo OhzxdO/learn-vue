@@ -1,12 +1,25 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <!-- replace无法前进后退 -->
+      <router-link to="/" tag='button' replace>Home</router-link> |
+      <router-link to="/about" replace>About</router-link> |
+      <router-link :to="'/user/'+userid" replace>User</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+  export default{
+    name:'app',
+    data () {
+      return {
+        userid:'user1'
+      }
+    }
+  }
+</script>
 
 <style>
 #app {
