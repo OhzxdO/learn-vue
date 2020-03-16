@@ -13,6 +13,25 @@
 export default {
   name: 'Home',
   components: {
+  },
+  data () {
+    return {
+      path:'/home/news'
+    }
+  },
+  created () {
+    console.log('create home')
+  },
+  destroyed () {
+    console.log('destroyed home')
+  },
+  activated () {
+    this.$router.push(this.path)
+  },
+  beforeRouteLeave(to, from, next){
+    console.log(this.$route.path)
+    this.path=this.$route.path
+    next()
   }
 }
 </script>

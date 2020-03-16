@@ -7,7 +7,9 @@
       <router-link :to="'/user/'+userid" >User</router-link> |
       <router-link :to="{path:'/profile',query:{name:'jack',age:16}}" >Profile</router-link>
     </div>
-    <router-view/>
+    <keep-alive exclude='Profile,User'>
+      <router-view/>      
+    </keep-alive>
   </div>
 </template>
 
